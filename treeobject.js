@@ -1,9 +1,10 @@
 class Tree{
   constructor(name){
     this.name = name;
-    this.syrup = false;
-    this.nuts = false;
-    this.evergreen = false;
-    this.inAmerica = true;
+    this.squirrel = false;
+    this.leaves = true;
+    this.birds = true;
+    this.bark = true;
   }
 }
+

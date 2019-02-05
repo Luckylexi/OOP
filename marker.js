@@ -1,3 +1,4 @@
+
 class badmarkerstate {
     constructor(problem){
         this._problem = problem;
@@ -41,10 +42,51 @@ class marker{
   //  }
 }
 
-var blackMarker = new marker("black");
-var redMarker = new marker("red");
+class markertest{
+    blackMarker() {return new marker("black");}
+    redMarker() {return new marker("red");}
 
-blackMarker.draw();
-redMarker.draw();
+    testDrawCappedBad(){
+        var ok = false;
+        try{
+            var black = this.blackMarker();
+            black.draw();
+        }
+        catch(err){
+            ok = true;
+        }
+        if (!ok){ throw "bad";}
+    }
 
-console.log("I have a " + blackMarker.color + " marker");
+    testdrawuncappedok(){
+        var red = this.redMarker();
+        red.capped = false;
+        red.draw();
+    }
+
+    testblackmarkerisblack(){
+         var black = this.blackMarker();
+         if (black.color !== "black")
+         {
+             throw "bad";
+         }
+    }
+    testall() {
+        this.testblackmarkerisblack();
+        this.testDrawCappedBad();
+        this.testdrawuncappedok();
+    }
+}
+
+var testMarker = new markertest();
+testMarker.testall();
+
+//var blackMarker = new marker("black");
+//var redMarker = new marker("red");
+
+//blackMarker.draw();
+//blackMarker.capped(false);
+//blackMarker.draw();
+//redMarker.draw();
+
+//console.log("I have a " + blackMarker.color + " marker");
