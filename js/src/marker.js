@@ -1,48 +1,46 @@
-class badmarkerstate {
-    constructor(problem){
-        this._problem = problem;
+"use strict";
+
+class BadMarkerState {
+    constructor(problem) {
+        this.problem=problem;
     }
 }
-class marker{
-    constructor(color){
+
+class Marker {
+    constructor(color) {
         console.log("constructed marker");
         this._color = color;
         this._capped = true;
     }
 
-    draw(){
-        if (!this._capped){
+    draw() {
+        if (!this._capped) {
            console.log("drawing in " + this._color);
-        }
-        else{
-            throw marker.Bad_Marker_Capped_Draw;
+        } else {
+            throw Marker.BAD_MARKER_CAPPED_DRAW;
         }
     }
 
-    get color(){
+    get color() {
         return this._color;
     }
 
-    get capped(){
+    get capped() {
         return this._capped;
     }
 
-    set capped(value){
-        if (typeof value == "boolean"){
+    set capped(value) {
+        if (typeof value == "boolean") {
             this._capped = value;
-        }
-        else{
-            throw marker.Bad_Marker_Capped_Invalid;
+        } else {
+            throw Marker.BAD_MARKER_CAPPED_INVALID;
         }
     }
-
-  //  set color(value){
-   //     this._color = value;
-  //  }
 }
 
-marker.Bad_Marker_Capped_Draw = new badmarkerstate("drawing with capped marker is bad");
-marker.Bad_Marker_Capped_Invalid = new badmarkerstate("capped must be true or false");
+Marker.BAD_MARKER_CAPPED_DRAW = new BadMarkerState("drawing with capped marker is bad");
+Marker.BAD_MARKER_CAPPED_INVALID = new BadMarkerState("capped must be true or false");
 
-exports.marker = Marker;
-exports.badmarkerstate = BadMarkerState;
+
+exports.Marker = Marker;
+exports.BadMarkerState = BadMarkerState;
