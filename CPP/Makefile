@@ -1,3 +1,4 @@
+CXX=g++
 CXXFLAGS=-std=c++14 -Iinclude -fPIC
 
 tmp/Building.o : src/Building.cpp include/Building.h include/BuildingErrorState.h
