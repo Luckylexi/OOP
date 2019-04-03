@@ -2,11 +2,11 @@ import enum
 
 class cell:
     def __init__(self, infect, nuc, organs):
-        self.infected = False
-        self.nucleous = False
-        self.organelles = False
+        self.infected = infect
+        self.nucleous = nuc
+        self.organelles = organs
         self.membrane = True
-    def Infect(self): #set infected true
+    def infect(self): #set infected true
         self.infected = True
     def disinfect(self): #set infected false (easier terms to understand)
         self.infected = False
@@ -18,8 +18,9 @@ class Pili(enum.Enum):
     type4 = 2
 
 class prokaryote(cell):
-    def __init__(self,flag,pili):
+    def __init__(self,flag,pili, name):
         cell.__init__(self, False, False, True)
+        self.cellName = name
         self.flagellum = flag
         self.pili = pili
     def swimming(self):
@@ -31,3 +32,6 @@ class prokaryote(cell):
     def twitchingMotility(self):
         if(self.pili == Pili.type4): return True
         else: False
+    def death(self):
+        print("{0} is dead", self.cellName)
+        del self
