@@ -3,3 +3,5 @@ js folder - includes marker.js and building.js in src and tests in test, caputur
 java folder - includes marker.java and building.java code
 
 cpp folder - buidling cpp stuff, works when ran from cpp folder
+
+python folder - cellApp.py main file, single inheritance with tests
