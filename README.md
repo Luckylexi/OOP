@@ -2,6 +2,7 @@ js folder - includes marker.js and building.js in src and tests in test, caputur
 
 java folder - includes marker.java and building.java code
 
-cpp folder - buidling cpp stuff, works when ran from cpp folder
+cpp folder - buidling.cpp files (buildingMake), cellmain.cpp files 
+(Makefile) cellinheritance.PNG included
 
 python folder - cellApp.py main file, single inheritance with tests, capture at https://github.com/Luckylexi/OOP/blob/master/Python/test.PNG
