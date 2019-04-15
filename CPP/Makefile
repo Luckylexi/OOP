@@ -1,19 +1,19 @@
 CXX=g++
 CXXFLAGS=-std=c++14 -Iinclude -fPIC
 
-tmp/Building.o : src/Building.cpp include/Building.h include/BuildingErrorState.h
+tmp/Cell.o : src/Cell.cpp include/Cell.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-tmp/BuildingErrorState.o : src/BuildingErrorState.cpp include/BuildingErrorState.h
+tmp/Prokaryote.o : src/Prokaryote.cpp include/Prokaryote.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-lib/libBuilding.so : tmp/Building.o tmp/BuildingErrorState.o
+lib/libCell.so : tmp/Cell.o tmp/Prokaryote.o
 	$(CXX) $(CXXFLAGS) -shared -o $@ $^
 
-tmp/main.o : src/main.cpp include/Building.h include/BuildingErrorState.h
+tmp/main.o : src/cellmain.cpp include/Cell.h include/Prokaryote.h
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-bin/building: tmp/main.o lib/libBuilding.so
+bin/Cell: tmp/main.o lib/libCell.so
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 
