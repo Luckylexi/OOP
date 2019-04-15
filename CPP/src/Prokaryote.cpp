@@ -22,6 +22,9 @@ namespace prokaryote
     bool prokaryote::twitchingMotility(){
         if(_pili == type4) return true;
         else false;}
+    prokaryote::~prokaryote(){
+        cout << name << " is dead" << endl;
+    }
 }
 
 

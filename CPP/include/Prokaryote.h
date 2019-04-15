@@ -17,6 +17,6 @@ namespace prokaryote{
             bool swimming();
             bool DNAtransfer();
             bool twitchingMotility();
-           
+            ~prokaryote();
     };
 }

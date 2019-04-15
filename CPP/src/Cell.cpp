@@ -20,6 +20,5 @@ namespace cell{
     }
     
     cell::~cell(){
-        cout << "The cell is dead" << endl;
     }
 }

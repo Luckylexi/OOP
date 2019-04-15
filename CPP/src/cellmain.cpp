@@ -14,5 +14,7 @@ int main(){
 
     cout << "All tests passed" << endl;
 
+    eColi->~prokaryote();
+
     return 0;
 }
