@@ -12,7 +12,7 @@ int main(){
     assert(("Ecoli can transfer DNA", eColi->DNAtransfer()==true));
     assert(("Ecoli doesn't have a twitch motality", eColi->twitchingMotility()==false));
 
-    cout << "All tests passed" << endl;
+    cout << "This is Ecoli (all tests passed)" << endl;
 
     eColi->~prokaryote();
 
