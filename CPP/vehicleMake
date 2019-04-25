@@ -1,0 +1,26 @@
+CXX=g++
+CXXFLAGS=-std=c++14 -Iinclude -fPIC
+
+
+tmp/vehicle.o : src/vehicle/Vehicle.cpp include/vehicle/Vehicle.h include/vehicle/Color.h include/vehicle/medium.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+tmp/Automobile.o : src/vehicle/Automobile.cpp include/vehicle/Automobile.h include/vehicle/Color.h include/vehicle/medium.h include/vehicle/engine.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+tmp/boat.o : src/vehicle/Boat.cpp include/vehicle/Boat.h include/vehicle/Color.h include/vehicle/medium.h include/vehicle/engine.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+tmp/duckboat.o : src/vehicle/DuckBoat.cpp include/vehicle/DuckBoat.h include/vehicle/Color.h include/vehicle/medium.h include/vehicle/engine.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+lib/libVehicle.so : tmp/vehicle.o tmp/Automobile.o tmp/boat.o tmp/duckboat.o
+	$(CXX) $(CXXFLAGS) -shared -o $@ $^
+
+tmp/main.o : src/vehicle/vehicleMain.cpp include/vehicle/Vehicle.h include/vehicle/Automobile.h include/vehicle/Boat.h include/vehicle/DuckBoat.h include/vehicle/medium.h include/vehicle/Color.h include/vehicle/engine.h
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+bin/vehicle : tmp/main.o lib/libVehicle.so
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+
