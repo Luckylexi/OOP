@@ -7,12 +7,12 @@ using namespace std;
 
 namespace vehicle
 {
-    duckboat::duckboat(Color c, string n) : vehicle(diesel, c, ground), autoMobile(diesel, 96, 6, 8, NULL, NULL, c), boat(2, 1, 40, diesel, c, n) {
+    duckboat::duckboat(Color c, string n) : vehicle(diesel, c, ground), autoMobile(diesel, 96, 6, 8, "", "", c), boat(2, 1, 40, diesel, c, n) {
             cout << "an amphibious vehicle " << n << " was built." << endl; }
 
     void duckboat::changeMedium(mediumType m){ setMedium(m); }
 
-    int duckboat::move(int speed, int time){
+    double duckboat::move(double speed, double time){
         mediumType m = getMedium();
         std::string n = getName();
         if(m == water){

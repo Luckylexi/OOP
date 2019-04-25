@@ -15,7 +15,7 @@ namespace vehicle
             virtual void setColor(Color c);
             virtual mediumType getMedium();
             virtual void setMedium(mediumType m);
-            virtual int move(int speed, int time);
+            virtual double move(double speed, double time);
 
             virtual ~vehicle();
 

@@ -17,7 +17,7 @@ namespace vehicle{
             int getLevels() const;
             int getLength() const;
             std::string getName();
-            int move(int speed, int time) override;
+            double move(double speed, double time) override;
 
             ~boat();
 

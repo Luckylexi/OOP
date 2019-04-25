@@ -17,7 +17,7 @@ namespace vehicle{
             int getCylinders() const;
             std::string getMake() const;
             std::string getModel() const;
-            int move(int speed, int time) override;
+            double move(double speed, double time) override;
 
             ~autoMobile();
 

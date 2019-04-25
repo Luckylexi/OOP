@@ -24,7 +24,7 @@ namespace vehicle
 
     void vehicle::setMedium(mediumType m) {medium = m;}
 
-    int vehicle::move(int speed, int time)
+    double vehicle::move(double speed, double time)
     {
         cout << "The vehicle moved " << (speed * time)/1000 << " km in " << time << " s when traveling at " << speed << " m/s. (vehicle)" << endl;
         return speed * time;

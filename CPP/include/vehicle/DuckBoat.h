@@ -14,7 +14,7 @@ namespace vehicle{
         public:
             duckboat(Color c, std::string n);
             void changeMedium(mediumType m);
-            int move(int speed, int time) override;
+            double move(double speed, double time) override;
             ~duckboat();
     };
 }

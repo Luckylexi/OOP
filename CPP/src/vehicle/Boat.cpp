@@ -24,7 +24,7 @@ namespace vehicle
 
     std::string boat::getName() { return name; }
 
-    int boat::move(int speed, int time)
+    double boat::move(double speed, double time)
     {
         cout << name <<" moved " << (speed * time) << " m in " << time << " s when traveling at " << speed / (1.94) << " knots (boat)" << endl;
         return speed * time;

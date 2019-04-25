@@ -23,7 +23,7 @@ namespace vehicle
 
     string autoMobile::getModel() const { return model; }
 
-    int autoMobile::move(int speed, int time){
+    double autoMobile::move(double speed, double time){
         cout << "The " << make << " " << model << " moved " << (speed * time)/1609 << " mi in " << time << " s when traveling at " << speed / (1.94) << " mph (automobile)" << endl;
         return speed * time;
     }
